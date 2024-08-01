@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Application Tracker",
+    "version": "1.0",
+    "description": "A Chrome extension to help track job applications.",
+    "action":
+    {
+        "default_popup": "index.html"
+    },
+    "oauth2": {
+    "client_id": "YOUR_CLIENT_ID",
+    "scopes": [
+       "openid", "email", "profile"
+    ]
+ },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "identity",
+    "*://*.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+        "extension_pages": "script-src 'self' 'unsafe-inline'; object-src 'self'"
+    }
+}
